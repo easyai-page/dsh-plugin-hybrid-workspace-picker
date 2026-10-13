@@ -39,7 +39,23 @@
 
 ## 🚀 安装方法
 
-### 方式一：在当前会话中让 AI Agent 安装（推荐）
+### 方式一：使用官方 `dsh plugin` CLI 命令安装（推荐）
+
+在终端中执行以下命令（将 `<profile-name>` 替换为您正在使用的 profile 名称，如 `web`、`tui` 或 `headless`）：
+
+```bash
+# 从 GitHub 仓库直接安装并启用
+dsh plugin --profile web add github:easyai-page/dsh-plugin-hybrid-workspace-picker
+
+# 卸载命令（如需卸载）
+dsh plugin --profile web remove dsh-plugin-hybrid-workspace-picker
+```
+
+> **提示**：安装成功后，DSH 会自动将本插件的 bundle 补丁加入对应 profile 的配置栈，并触发热更新生效。
+
+---
+
+### 方式二：在与 AI Agent 对话中安装
 
 在与 DeepSeek Harness 对话时，直接对 AI 说：
 
@@ -51,14 +67,18 @@ Agent 将会调用 `plugin_manager` 工具自动安装并即时激活生效。
 
 ---
 
-### 方式二：通过 Git 克隆到本地安装
+### 方式三：通过 Git 克隆到本地安装
 
 1. 克隆本仓库到你的本地目录：
    ```bash
    git clone https://github.com/easyai-page/dsh-plugin-hybrid-workspace-picker.git ~/.dsh-plugins/hybrid-workspace-picker
    ```
 
-2. 让 AI Agent 安装本地目录，或者在 DSH Profile 的配置中加载：
+2. 在终端中使用 `dsh plugin` 命令添加本地路径：
+   ```bash
+   dsh plugin --profile web add ~/.dsh-plugins/hybrid-workspace-picker
+   ```
+   或者让 AI Agent 安装本地目录：
    ```text
    请帮我安装本地插件 bundle: /绝对路径/~/.dsh-plugins/hybrid-workspace-picker
    ```
@@ -117,7 +137,21 @@ However, in many development workflows:
 
 ## 🚀 Installation
 
-### Option 1: Install via AI Agent in conversation (Recommended)
+### Option 1: Official `dsh plugin` CLI Command (Recommended)
+
+Run the following command in your terminal (replace `web` with your active profile such as `tui` or `headless`):
+
+```bash
+# Install and enable directly from GitHub
+dsh plugin --profile web add github:easyai-page/dsh-plugin-hybrid-workspace-picker
+
+# Uninstall command (if needed)
+dsh plugin --profile web remove dsh-plugin-hybrid-workspace-picker
+```
+
+---
+
+### Option 2: Install via AI Agent in conversation
 
 Simply say to your DeepSeek Harness assistant:
 
@@ -129,14 +163,18 @@ The agent will invoke `plugin_manager` to install and activate it immediately.
 
 ---
 
-### Option 2: Clone and Install Locally
+### Option 3: Clone and Install Locally
 
 1. Clone this repository locally:
    ```bash
    git clone https://github.com/easyai-page/dsh-plugin-hybrid-workspace-picker.git ~/.dsh-plugins/hybrid-workspace-picker
    ```
 
-2. Ask the assistant to install from the absolute path:
+2. Add via `dsh plugin` CLI:
+   ```bash
+   dsh plugin --profile web add ~/.dsh-plugins/hybrid-workspace-picker
+   ```
+   Or ask the assistant to install from the absolute path:
    ```text
    Please install the local bundle: /path/to/dsh-plugin-hybrid-workspace-picker
    ```
