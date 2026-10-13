@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hybrid Workspace Directory Picker",
+    "description": "Supports both direct path input and local file manager browsing when adding a workspace."
+  }
+}

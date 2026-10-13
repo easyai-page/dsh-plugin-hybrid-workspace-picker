@@ -1,0 +1,49 @@
+{
+  "name": "dsh-plugin-hybrid-workspace-picker",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness plugin: Hybrid workspace picker supporting both direct path input and system file browser.",
+  "type": "module",
+  "license": "MIT",
+  "author": "easyai-page",
+  "homepage": "https://github.com/easyai-page/dsh-plugin-hybrid-workspace-picker#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/easyai-page/dsh-plugin-hybrid-workspace-picker.git"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "workspace",
+    "picker"
+  ],
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  }
+}

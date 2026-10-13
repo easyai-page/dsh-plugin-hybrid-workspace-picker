@@ -1,0 +1,3 @@
+- insert:
+    - id: hybrid-workspace-picker
+      name: 'dsh-plugin-hybrid-workspace-picker'
